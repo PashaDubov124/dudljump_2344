@@ -4,13 +4,22 @@ import sys
 
 pygame.init()
 
+class Main:
+    def __init__(self):
+        self.s_size = 480, 700
+        self.screen = pygame.display.set_mode(self.s_size)
+        self.bg_image = pygame.image.load("images/fon_dudljump.png")
+    def draw(self):
+        self.screen.fill((0, 0, 0))
+        self.screen.blit(self.bg_image, self.bg_image.get_rect())
 
 
-s_size = 480,700
+main  = Main()
 
-bg_color = 254,254,254
 
-screen = pygame.display.set_mode(s_size)
+
+
+
 
 
 while True :
@@ -19,5 +28,5 @@ while True :
             pygame.quit()
             sys.exit()
 
-    screen.fill(bg_color)
+    main.draw()
     pygame.display.update()
