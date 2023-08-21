@@ -4,7 +4,7 @@ class Back_ground:
     def __init__(self, s_size):
         self.s_size = s_size
         self.bg_image = pygame.image.load("images/fon_2.jpg")
-        self.bg_image_2 = pygame.image.load("images/fon_dudljump.png")
+        self.bg_image_2 = pygame.image.load("images/fon_2.jpg")
         self.bg_rect_1 = self.bg_image.get_rect()
         self.bg_rect_2 = self.bg_image_2.get_rect()
         self.bg_rect_1.bottomleft = 0, s_size[1]
