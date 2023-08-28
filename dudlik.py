@@ -10,7 +10,7 @@ class Dudlik:
         self.speed_x = 0
         self.speed = 4
         self.s_size = s_size
-        self.speed_y = 0
+        self.speed_y = 3
 
     def logic(self):
         if self.rect.left > self.s_size[0]:
@@ -24,8 +24,14 @@ class Dudlik:
         for platform in platforms:
             if self.rect.colliderect(platform.rect):
                 if self.rect.bottom == platform.rect.top:
-                    self.speed_y += 10
+                    self.speed_y -= 10
+                    if self.speed_y < -10:
+                        self.speed_y = -10
+
 
     def move(self):
         self.rect.x += self.speed_x
-        self.rect.y -= self.speed_y
+        self.rect.y += self.speed_y
+        self.speed_y += 1
+        if self.speed_y > 3:
+            self.speed_y = 3

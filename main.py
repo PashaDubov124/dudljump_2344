@@ -16,7 +16,7 @@ class Main:
         self.create_platform()
         self.clock = pygame.time.Clock()
         self.fon = Back_ground(self.s_size)
-        self.dudlik = Dudlik(self.s_size[0] / 2, self.s_size[1] - 70, self.s_size)
+        self.dudlik = Dudlik(self.s_size[0] / 2, self.s_size[1] - 350, self.s_size)
 
     def draw(self):
         self.screen.fill((0, 0, 0))
@@ -39,6 +39,7 @@ class Main:
         self.fon.logic()
         self.dudlik.move()
         self.dudlik.logic()
+        self.dudlik.jump(self.platforms)
 
     def platform_logic(self):
         for platform in self.platforms:
