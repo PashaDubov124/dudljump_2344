@@ -12,7 +12,7 @@ class Main:
     def __init__(self):
         self.s_size = 480, 700
         self.screen = pygame.display.set_mode(self.s_size)
-        self.platforms = [Platform(self.s_size[0] / 2 - 45, self.s_size[1] - 30)]
+        self.platforms = [Platform(self.s_size[0] / 2 - 45, self.s_size[1] - 330)]
         self.create_platform()
         self.clock = pygame.time.Clock()
         self.fon = Back_ground(self.s_size)
@@ -66,6 +66,8 @@ while True:
                 main.dudlik.speed_x = 0
             if event.key == pygame.K_RIGHT:
                 main.dudlik.speed_x = 0
+    if main.dudlik.rect.top >=  main.s_size[1] + 50:
+        main = Main()
     main.draw()
     main.update()
     pygame.display.update()
